@@ -1,0 +1,25 @@
+{% extends 'mtc_bus_ticketing_app/base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="heading">
+            <label>admin login</label>
+        </div>
+        <div class="txtbox">
+            <label>Enter UserName </label>
+            <input type="text" name="adminuser">
+            <label>Enter Password </label>
+            <input type="text" name="adminpassword">
+        </div>
+        <div class="adminlog">
+            <button>
+                <a href="">login</a>
+            </button>
+        </div>
+    </div>
+{% endblock %}

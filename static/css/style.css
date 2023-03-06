@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'poppins',sans-serif;
+    background-color: blue;
+}
+
+.txt {
+    color:greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 200%;
+    font-weight: bold;
+    position: absolute;
+    user-select: none;
+}
+
+.loader {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 10%;
+    margin-left: 45%;
+    border-radius: 50%;
+    border: 6px solid;
+    border-color: white transparent white transparent;
+    animation: spin 1.5s linear infinite;
+    position: relative;
+}
+
+@keyframes spin {
+    to {
+        transform : rotate(360deg);
+    }
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+.btn button {
+    width: 150px;
+    height: 50px;
+    border-radius: 7%;
+    margin-top: 5%;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: darkred;
+}
+
+.btn button:hover {
+    background-color: rgba(139, 0, 0, 0.911);
+}
+
+.btn button a {
+    text-decoration: none;
+    color: white;
+}
