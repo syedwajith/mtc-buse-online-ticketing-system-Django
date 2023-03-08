@@ -1,0 +1,56 @@
+{% extends 'mtc_bus_ticketing_app/base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {{message.tags}}" role="alert">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="nav-bar">
+        <label>admin</label>
+        <button>
+            <a href="/mtc_bus_ticketing_app/">logout</a>
+        </button>
+    </div>
+    <div class="side-bar">
+        <div class="box1">
+            <ul>
+                <li>
+                    <a href="/mtc_bus_ticketing_app/adminhome">home</a>
+                </li>
+                <li>
+                    <a href="/mtc_bus_ticketing_app/addbus">add bus route</a>
+                </li>
+                <li>
+                    <a href="/mtc_bus_ticketing_app/updatebus1">update bus route</a>
+                </li>
+                <li>
+                    <a href="/mtc_bus_ticketing_app/deletebus">delete bus route</a>
+                </li>
+                <li>
+                    <a href="/mtc_bus_ticketing_app/todaycollection">today collection</a>
+                </li>
+                <li>
+                    <a href="/mtc_bus_ticketing_app/overallcollection">overall collection</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        welcome admin
+    </div>
+    
+    {% block adminsite %}
+        
+    {% endblock adminsite %}
+        
+{% endblock %}
+    

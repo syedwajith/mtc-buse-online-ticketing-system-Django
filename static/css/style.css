@@ -1,17 +1,31 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink : #e7717d;
+    --green-yellow : #afd275;
+    --light-green : #75d275;
+    --brown : #7e685a;
+    --lightbrown : #c2b9b0;
+    --gray : #c2cad0;
+    --black : #0b0c10;
+    --white : #ffffff;
 }
 
 body {
     width: 100vw;
     height: 100vh;
     font-family: 'poppins',sans-serif;
-    background-color: blue;
+    background-color: var(--pink);
 }
 
+/* index.html */
+
 .txt {
-    color:greenyellow;
+    color: var(--green-yellow);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +34,20 @@ body {
     font-weight: bold;
     position: absolute;
     user-select: none;
+    animation: glow 1s ease infinite;
+}
+
+@keyframes glow {
+    from {
+        color: var(--green-yellow);
+    }
+    to {
+        color: var(--light-green);
+        text-shadow: 0 0 5px rebeccapurple,
+                     0 0 25px rebeccapurple,
+                     0 0 50px rebeccapurple,
+                     0 0 100px rebeccapurple;
+    }
 }
 
 .loader {
@@ -33,7 +61,7 @@ body {
     margin-left: 45%;
     border-radius: 50%;
     border: 6px solid;
-    border-color: white transparent white transparent;
+    border-color: var(--gray) transparent var(--gray) transparent;
     animation: spin 1.5s linear infinite;
     position: relative;
 }
@@ -55,20 +83,189 @@ body {
 .btn button {
     width: 150px;
     height: 50px;
+    border: none;
     border-radius: 7%;
     margin-top: 5%;
     font-size: 20px;
     padding: 10px;
     cursor: pointer;
     text-transform: uppercase;
-    background-color: darkred;
+    background-color: var(--brown);
 }
 
 .btn button:hover {
-    background-color: rgba(139, 0, 0, 0.911);
+    background-color: var(--lightbrown);
 }
 
 .btn button a {
     text-decoration: none;
-    color: white;
+    color: var(--black);
+}
+
+/* adminlogin.html */
+
+.container {
+    width: 500px;
+    height: 300px;
+    background-color: var(--gray);
+    flex-direction: column;
+    border: none;
+    border-radius: 5%;
+    box-shadow: 0 0 0 3px var(--white);
+}
+
+.heading {
+    font-size: 25px;
+    user-select: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 20px 0 40px;
+}
+
+.txtbox label {
+    font-size: 17px;
+    padding: 10px;
+}
+
+.txtbox input {
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+}
+
+.adminlog {
+    padding: 20px;
+    margin: 30px;
+}
+
+.adminlog input {
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--green-yellow);
+    font-size: 15px;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: var(--black);
+    font-weight: 600px;
+}
+
+.adminlog input:hover {
+    background-color: var(--light-green);
+}
+
+.alert {
+    width: 220px;
+    height: 25px;
+    padding: 5px;
+    margin: 20px;
+    color: darkred;
+    background-color: var(--gray);
+}
+
+/* adminhome.html */
+
+.nav-bar {
+    width: 100vw;
+    height: 60px;
+    top: 0;
+    background-color: var(--brown);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+}
+
+.nav-bar label {
+    padding-top: 15px;
+    margin-right: 80%;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--lightbrown);
+    user-select: none;
+}
+
+.nav-bar button {
+    width: 6%;
+    height: 50%;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5%;
+    background-color: var(--green-yellow);
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.nav-bar button:hover {
+    background-color: var(--light-green);
+}
+
+.nav-bar button a {
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--brown);
+    user-select: none;
+}
+
+.side-bar {
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100vh;
+    background-color: var(--brown);
+    position: fixed;
+}
+
+.box1 {
+    padding-top: 80px;
+    margin-left: 30px;
+}
+
+.box1 ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style: none;
+}
+
+.box1 ul li {
+    padding: 20px 0px 20px 0px;
+}
+
+.box1 ul li a {
+    padding: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid;
+    border-radius: 7%;
+    text-decoration: none;
+    color: var(--gray);
+    text-transform: capitalize;
+    user-select: none;
+}
+
+.box1 ul li a:hover {
+    background-color: var(--lightbrown);
+    color: var(--black);
+}
+
+.content {
+    margin-left: 250px;
+    padding-top: 300px;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    color: var(--black);
+}
+
+/* addbus.html */
+
+h1 {
+    margin-left: 250px;
+    padding-top: 80px;
 }

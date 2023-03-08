@@ -6,20 +6,34 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="heading">
-            <label>admin login</label>
-        </div>
-        <div class="txtbox">
-            <label>Enter UserName </label>
-            <input type="text" name="adminuser">
-            <label>Enter Password </label>
-            <input type="text" name="adminpassword">
-        </div>
-        <div class="adminlog">
-            <button>
-                <a href="">login </a>
-            </button>
-        </div>
-    </div>
+    <br>
+    <br>
+    <center>
+        <form method="post">
+            {% csrf_token %}
+            <div class="container">
+                <div class="heading">
+                    <label>admin login</label>
+                </div>
+                <div class="txtbox">
+                    <label>Enter UserName </label>
+                    <input type="text" name="adminuser">
+                    <br>
+                    <br>
+                    <label>Enter Password </label>
+                    <input type="password" name="adminpassword">
+                </div>
+                <div class="adminlog">
+                    <input type="submit" value="login">
+                </div>
+            </div>
+        </form>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{message.tags}}" role="alert">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </center>
 {% endblock %}
