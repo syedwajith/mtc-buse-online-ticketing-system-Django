@@ -9,16 +9,19 @@
 {% block adminsite %}
     <div class="add">
         <div class="header">
-            <label>delete route details</label>
+            <label>add bus routes</label>
         </div>
         <form method="post">
             {% csrf_token %}
-            <div class="delete-field">
+            <div class="busdetail">
                 {{form.as_p}}
             </div>
-            <div class="delete-btn">
-                <input type="submit" value="delete">
+            <div class="btn-sub">
+                <input type="submit" value="Add Route">
+                <a href="/mtc_bus_ticketing_app/addbus">
+                    back
+                </a>
             </div>
         </form>
     </div>
-{% endblock adminsite %}
+{% endblock adminsite %} 

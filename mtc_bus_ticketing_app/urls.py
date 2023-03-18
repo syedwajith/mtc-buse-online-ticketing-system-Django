@@ -22,9 +22,12 @@ urlpatterns = [
     path('adminlogin/', views.adminlogin),
     path('adminhome/', views.adminhome),
     path('addbus/', views.addbus),
+    path('busroutes/', views.busroutes),
+    path('routedetails/', views.routedetails),
     path('updatebus1/', views.updatebus1),
     path('updatebus2/', views.updatebus2),
     path('deletebus/', views.deletebus),
     path('todaycollection/', views.todaycollection),
     path('overallcollection/', views.overallcollection),
+    path('viewbusroutes/', views.viewbusroutes),
 ]

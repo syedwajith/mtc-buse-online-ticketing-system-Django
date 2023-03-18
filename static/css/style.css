@@ -80,7 +80,11 @@ body {
     margin-top: 10%;
 }
 
-.btn button {
+.btn a {
+    margin-top: 60px;
+}
+
+.btn a button {
     width: 150px;
     height: 50px;
     border: none;
@@ -97,7 +101,7 @@ body {
     background-color: var(--lightbrown);
 }
 
-.btn button a {
+.btn a button {
     text-decoration: none;
     color: var(--black);
 }
@@ -263,9 +267,159 @@ body {
     color: var(--black);
 }
 
-/* addbus.html */
-
-h1 {
-    margin-left: 250px;
-    padding-top: 80px;
+.msg .alert {
+    width: 30%;
+    margin-left: 35%;
 }
+
+/* addbus.html */   /* busroutes.html */    /* deletebus.html */    /* overallcollection.html */    /* routedetails.html */    /* todaycollection.html */    /* updatebus1.html */    /* updatebus2.html */    /* viewbusroutes.html */    
+
+.add, .msg {                      
+    margin-left: 250px;
+    padding-top: 70px;
+}
+
+.header {                  
+    padding: 20px;
+    margin-left: 380px;
+    font-size: 40px;
+    font-weight: 500;
+    text-transform: capitalize;
+    user-select: none;
+}
+
+.btn-addbus {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.btn-addbus a {
+    width: 16%;
+    margin-top: 5%;
+    margin-left: 40%;
+}
+
+.btn-addbus a button {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 95%;
+    text-transform: capitalize;
+    background-color: var(--gray);
+    color: var(--brown);
+    font-weight: 600;
+}
+
+.btn-addbus button:hover {
+    background-color: var(--lightbrown);
+    color: var(--black);
+}
+
+/* busroutes.html */    /* routedetails.html */
+
+.busdetail {
+    padding: 20px;
+    margin-left: 350px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+    font-size: 18px;
+}
+
+.btn-sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-sub input[type="submit"] {
+    width: 10%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: var(--gray);
+    color: var(--brown);
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-sub input[type="submit"]:hover {
+    background-color: var(--lightbrown);
+    color: var(--black);
+}
+
+.btn-sub a {
+    width: 5%;
+    height: 3%;
+    margin-left: 5%;
+    margin-top: 3%;
+    padding: 0.7%;
+    font-size: 18px;
+    text-decoration: none;
+    color: blue;
+    font-weight: 500;
+}
+
+.add input[type="text"],.add input[type="number"] {
+    width: 300px;
+    height: 25px;
+    padding: 10px;
+    display: flex;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.BusRoute-field, .BusRoute_No-field {
+    text-transform: uppercase;
+}
+
+.From-field, .To-field, .Source_location-field, .Destination_location-field {
+    text-transform: capitalize;
+}
+
+/* updatebus1.html */
+
+/* updatebus2.html */
+
+/* deletebus.html */
+
+.delete-field {
+    margin-left: 30%;
+    margin-top: 5%;
+    font-size: 18px;
+}
+
+.delete-btn {
+    margin-top: 2%;
+}
+
+.delete-btn input[type="submit"] {
+    width: 6%;
+    padding: 5px;
+    margin-left: 30%;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: capitalize;
+    background-color: red;
+    color: var(--white);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* viewbusroutes.html */
+
+/* todaycollection.html */
+
+/* overallcollection.html */

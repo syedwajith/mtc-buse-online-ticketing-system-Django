@@ -7,13 +7,15 @@
 
 
 {% block content %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert {{message.tags}}" role="alert">
-                {{message}}
-            </div>
-        {% endfor %}
-    {% endif %}
+    <div class="msg">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{message.tags}}" role="alert">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
     <div class="nav-bar">
         <label>admin</label>
         <button>
@@ -36,6 +38,9 @@
                     <a href="/mtc_bus_ticketing_app/deletebus">delete bus route</a>
                 </li>
                 <li>
+                    <a href="/mtc_bus_ticketing_app/viewbusroutes">view bus routes</a>
+                </li>
+                <li>
                     <a href="/mtc_bus_ticketing_app/todaycollection">today collection</a>
                 </li>
                 <li>
@@ -44,9 +49,12 @@
             </ul>
         </div>
     </div>
-    <div class="content">
-        welcome admin
-    </div>
+    
+    {% if request.path == '/mtc_bus_ticketing_app/adminhome/' %}
+        <div class="content">
+            welcome admin
+        </div>
+    {% endif %}
     
     {% block adminsite %}
         

@@ -1,0 +1,39 @@
+{% include 'mtc_bus_ticketing_app/adminhome.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+
+
+{% block adminsite %}
+    <div class="add">
+        <div class="header">
+            <label>view route details</label>
+        </div>
+        <div class="tab">
+            <table>
+                <thead>
+                    <tr>
+                        <th>BusRoute No</th>
+                        <th>Source</th>
+                        <th>Destination</th>
+                    </tr>
+                </thead>
+                
+                {% for busdetails in busdetails %}
+                <tbody>
+                    <tr>
+                        <td>{{busdetails.BusRoute_No}}</td>
+                        <td>{{busdetails.Source_location}}</td>
+                        <td>{{busdetails.Destination_location}}</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+                    
+            </table>
+        </div>
+    </div>
+{% endblock adminsite %}
+    
