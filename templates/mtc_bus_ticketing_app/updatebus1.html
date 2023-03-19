@@ -11,5 +11,14 @@
         <div class="header">
             <label>update route details</label>
         </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="update-field">
+                {{form.as_p}}
+            </div>
+            <div class="search-btn">
+                <input type="submit" value="search">
+            </div>
+        </form>
     </div>
 {% endblock adminsite %} 

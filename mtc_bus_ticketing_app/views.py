@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from mtc_bus_ticketing_app.forms import BusRouteDetailsForm,BusRoutesForm,DeleteRouteForm
+from mtc_bus_ticketing_app.forms import BusRouteDetailsForm,BusRoutesForm,DeleteRouteForm,UpdateRouteForm
 from mtc_bus_ticketing_app.models import BusRouteDetails,BusRoutes
 
 # Create your views here.
@@ -47,7 +47,8 @@ def routedetails(request):
     return render(request, 'mtc_bus_ticketing_app/routedetails.html', {'form':form})
 
 def updatebus1(request):
-    return render(request, 'mtc_bus_ticketing_app/updatebus1.html')
+    form = UpdateRouteForm()
+    return render(request, 'mtc_bus_ticketing_app/updatebus1.html', {'form':form})
 
 def updatebus2(request):
     return render(request, 'mtc_bus_ticketing_app/updatebus2.html')

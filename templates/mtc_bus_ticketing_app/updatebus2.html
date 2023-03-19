@@ -11,5 +11,38 @@
         <div class="header">
             <label>update route details</label>
         </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="tab">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>BusRoute No</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>TicketAmount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    
+                    {% for busroutedetails in busroutedetails %}
+                    <tbody>
+                        <tr>
+                            <td>{{busroutedetails.BusRoute}}</td>
+                            <td>{{busroutedetails.From}}</td>
+                            <td>{{busroutedetails.To}}</td>
+                            <td>
+                                <input type="number" name="" value="{{busroutedetails.TicketAmount}}">
+                            </td>
+                            <td>
+                                <a href="">update</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                        
+                </table>
+            </div>
+        </form>
     </div>
 {% endblock adminsite %} 

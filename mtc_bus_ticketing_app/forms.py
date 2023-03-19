@@ -27,3 +27,8 @@ class DeleteRouteForm(forms.ModelForm):
     class Meta:
         model = BusRoutes
         fields = ['BusRoute_No']
+
+class UpdateRouteForm(forms.ModelForm):
+    class Meta:
+        model = BusRoutes
+        fields = ['BusRoute_No']
