@@ -52,8 +52,8 @@ def updatebus1(request):
     if request.method == 'POST':
         form = UpdateRouteForm(request.POST)
         if form.is_valid():
-            BusRoute_No = form.cleaned_data['BusRoute_No']
-            busroutedetails = BusRouteDetails.objects.filter(BusRoute=BusRoute_No)
+            BusRoute = form.cleaned_data['BusRoute']
+            busroutedetails = BusRouteDetails.objects.filter(BusRoute=BusRoute)
             if busroutedetails.exists():
                 if busroutedetails and hasattr(busroutedetails, 'busroutedetail'):
                     context = {'busroutedetail':busroutedetails.busroutedetail}
@@ -72,9 +72,9 @@ def deletebus(request):
     if request.method == 'POST':
         form = DeleteRouteForm(request.POST)
         if form.is_valid():
-            BusRoute_No = form.cleaned_data['BusRoute_No']
-            busroutes = BusRoutes.objects.get(BusRoute_No=BusRoute_No)
-            busroute_detail = BusRouteDetails.objects.filter(BusRoute=BusRoute_No)
+            BusRoute = form.cleaned_data['BusRoute']
+            busroutes = BusRoutes.objects.filter(BusRoute_No=BusRoute)
+            busroute_detail = BusRouteDetails.objects.filter(BusRoute=BusRoute)
             if busroutes.exists() or busroute_detail.exists():
                 busroutes.delete()
                 busroute_detail.delete()

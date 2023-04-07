@@ -25,13 +25,13 @@ class BusRoutesForm(forms.ModelForm):
 
 class DeleteRouteForm(forms.ModelForm):
     class Meta:
-        model = BusRoutes
-        fields = ['BusRoute_No']
+        model = BusRouteDetails
+        fields = ['BusRoute']
 
 class UpdateRouteForm(forms.ModelForm):
     class Meta:
-        model = BusRoutes
-        fields = ['BusRoute_No']
+        model = BusRouteDetails
+        fields = ['BusRoute']
 
 class BookedTicketDetailsForm(forms.ModelForm):
     class Meta:
