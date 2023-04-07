@@ -1,5 +1,5 @@
 from django import forms
-from mtc_bus_ticketing_app.models import BusRouteDetails,BusRoutes
+from mtc_bus_ticketing_app.models import BusRouteDetails,BusRoutes,BookedTicketDetails
 
 # Create your forms here.
 
@@ -32,3 +32,8 @@ class UpdateRouteForm(forms.ModelForm):
     class Meta:
         model = BusRoutes
         fields = ['BusRoute_No']
+
+class BookedTicketDetailsForm(forms.ModelForm):
+    class Meta:
+        model = BookedTicketDetails
+        fields = ['Route_No','From_location','To_location','Ticket_Amount','No_of_Tickets','Total_Amount']

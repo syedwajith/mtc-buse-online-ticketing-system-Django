@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from mtc_bus_ticketing_app.forms import BusRouteDetailsForm,BusRoutesForm,DeleteRouteForm,UpdateRouteForm
-from mtc_bus_ticketing_app.models import BusRouteDetails,BusRoutes
+from mtc_bus_ticketing_app.models import BusRouteDetails,BusRoutes,BookedTicketDetails
+import datetime
 
 # Create your views here.
 
@@ -48,10 +49,23 @@ def routedetails(request):
 
 def updatebus1(request):
     form = UpdateRouteForm()
+    if request.method == 'POST':
+        form = UpdateRouteForm(request.POST)
+        if form.is_valid():
+            BusRoute_No = form.cleaned_data['BusRoute_No']
+            busroutedetails = BusRouteDetails.objects.filter(BusRoute=BusRoute_No)
+            if busroutedetails.exists():
+                if busroutedetails and hasattr(busroutedetails, 'busroutedetail'):
+                    context = {'busroutedetail':busroutedetails.busroutedetail}
+                    return render(request, 'mtc_bus_ticketing_app/updatebus2.html', context)
+            else:
+                messages.error(request, 'No results found')
     return render(request, 'mtc_bus_ticketing_app/updatebus1.html', {'form':form})
 
 def updatebus2(request):
-    return render(request, 'mtc_bus_ticketing_app/updatebus2.html')
+    busroutedetail = request.GET.get('busroutedetail')
+    context = {'busroutedetail':busroutedetail}
+    return render(request, 'mtc_bus_ticketing_app/updatebus2.html', context)
 
 def deletebus(request):
     form = DeleteRouteForm()
@@ -59,10 +73,15 @@ def deletebus(request):
         form = DeleteRouteForm(request.POST)
         if form.is_valid():
             BusRoute_No = form.cleaned_data['BusRoute_No']
-            BusRoutes.objects.get(BusRoute_No=BusRoute_No).delete()
-            BusRouteDetails.objects.filter(BusRoute=BusRoute_No).delete()
-            messages.success(request, 'Datas are Deleted Successfully')
-            return redirect('/mtc_bus_ticketing_app/deletebus')
+            busroutes = BusRoutes.objects.get(BusRoute_No=BusRoute_No)
+            busroute_detail = BusRouteDetails.objects.filter(BusRoute=BusRoute_No)
+            if busroutes.exists() or busroute_detail.exists():
+                busroutes.delete()
+                busroute_detail.delete()
+                messages.success(request, 'Datas are Deleted Successfully')
+                return redirect('/mtc_bus_ticketing_app/deletebus')
+            else:
+                messages.error(request, 'No results found')
     return render(request, 'mtc_bus_ticketing_app/deletebus.html', {'form':form})
 
 def viewbusroutes(request):
