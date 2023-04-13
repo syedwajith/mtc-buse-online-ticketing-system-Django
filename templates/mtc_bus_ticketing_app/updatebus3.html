@@ -1,0 +1,42 @@
+{% include 'mtc_bus_ticketing_app/adminhome.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+
+{% block adminsite %}
+<div class="add">
+    <div class="header">
+        <label>update route details</label>
+    </div>
+    <div class="tab2">
+        <form method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>BusRoute No</td>
+                    <td>{{update.BusRoute}}</td>
+                </tr>
+                <tr>
+                    <td>From</td>
+                    <td>{{update.From}}</td>
+                </tr>
+                <tr>
+                    <td>To</td>
+                    <td>{{update.To}}</td>
+                </tr>
+                <tr>
+                    <td>TicketAmount</td>
+                    <td>
+                        <input type="number" name="TicketAmount" value="{{update.TicketAmount}}">
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="update">
+        </form>
+    </div>
+</div>
+{% endblock adminsite %}
+    

@@ -26,6 +26,8 @@ urlpatterns = [
     path('routedetails/', views.routedetails),
     path('updatebus1/', views.updatebus1),
     path('updatebus2/', views.updatebus2),
+    path('updatebus2_update/<int:id>/', views.updatebus2_update),
+    path('updatebus3/', views.updatebus3),
     path('deletebus/', views.deletebus),
     path('todaycollection/', views.todaycollection),
     path('overallcollection/', views.overallcollection),

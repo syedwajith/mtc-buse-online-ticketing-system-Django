@@ -55,17 +55,27 @@ def updatebus1(request):
             BusRoute = form.cleaned_data['BusRoute']
             busroutedetails = BusRouteDetails.objects.filter(BusRoute=BusRoute)
             if busroutedetails.exists():
-                if busroutedetails and hasattr(busroutedetails, 'busroutedetail'):
-                    context = {'busroutedetail':busroutedetails.busroutedetail}
-                    return render(request, 'mtc_bus_ticketing_app/updatebus2.html', context)
+                busroutedetail = BusRouteDetails.objects.filter(BusRoute=BusRoute).values('BusRoute','From','To','TicketAmount')
+                return render(request, 'mtc_bus_ticketing_app/updatebus2.html', {'busroutedetail':busroutedetail})
             else:
                 messages.error(request, 'No results found')
     return render(request, 'mtc_bus_ticketing_app/updatebus1.html', {'form':form})
 
 def updatebus2(request):
-    busroutedetail = request.GET.get('busroutedetail')
-    context = {'busroutedetail':busroutedetail}
-    return render(request, 'mtc_bus_ticketing_app/updatebus2.html', context)
+    busroutedetail = request.GET.getlist('busroutedetail')
+    return render(request, 'mtc_bus_ticketing_app/updatebus2.html', {'busroutedetail':busroutedetail})
+
+def updatebus2_update(request,id):
+    update = BusRouteDetails.objects.get(id=id)
+    if request.method == 'POST':
+        form = BusRouteDetailsForm(request.POST,instance=update)
+        if form.is_valid():
+            form.save()
+            return redirect('/mtc_bus_ticketing_app/updatebus2')
+    return render(request, 'mtc_bus_ticketing_app/updatebus3.html',{'update':update})
+
+def updatebus3(request):
+    return render(request, 'mtc_bus_ticketing_app/updatebus3.html')
 
 def deletebus(request):
     form = DeleteRouteForm()

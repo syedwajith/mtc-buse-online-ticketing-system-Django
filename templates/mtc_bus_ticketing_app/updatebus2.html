@@ -11,38 +11,35 @@
         <div class="header">
             <label>update route details</label>
         </div>
-        <form method="post">
-            {% csrf_token %}
-            <div class="tab">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>BusRoute No</th>
-                            <th>From</th>
-                            <th>To</th>
-                            <th>TicketAmount</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
+        <div class="tab1">
+            <table>
+                <thead>
+                    <tr>
+                        <th>BusRoute No</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>TicketAmount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
                     
-                    {% for busroutedetails in busroutedetail %}
-                    <tbody>
-                        <tr>
-                            <td>{{busroutedetails.BusRoute}}</td>
-                            <td>{{busroutedetails.From}}</td>
-                            <td>{{busroutedetails.To}}</td>
-                            <td>
-                                <input type="number" name="" value="{{busroutedetails.TicketAmount}}">
-                            </td>
-                            <td>
-                                <a href="">update</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                    {% endfor %}
+                {% for busroutedetail in busroutedetail %}
+                <tbody>
+                    <tr>
+                        <td>{{busroutedetail.BusRoute}}</td>
+                        <td>{{busroutedetail.From}}</td>
+                        <td>{{busroutedetail.To}}</td>
+                        <td>{{busroutedetail.TicketAmount}}</td>
+                        <td>
+                            <a href="/mtc_bus_ticketing_app/updatebus2_update/{{busroutedetail.id}}">
+                                <button>update</button>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
                         
-                </table>
-            </div>
-        </form>
+            </table>
+        </div>
     </div>
 {% endblock adminsite %} 
