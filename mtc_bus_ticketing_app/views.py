@@ -4,10 +4,12 @@ from mtc_bus_ticketing_app.forms import BusRouteDetailsForm,BusRoutesForm,Delete
 from mtc_bus_ticketing_app.models import BusRouteDetails,BusRoutes,BookedTicketDetails
 import datetime
 
-# Create your views here.
+# Main Home Page
 
 def index(request):
     return render(request, 'mtc_bus_ticketing_app/index.html')
+
+# Admin Site
 
 def adminlogin(request):
     if request.method == 'POST':
@@ -72,7 +74,7 @@ def updatebus2_update(request,id):
         if form.is_valid():
             form.save()
             return redirect('/mtc_bus_ticketing_app/updatebus2')
-    return render(request, 'mtc_bus_ticketing_app/updatebus3.html',{'update':update})
+    return render(request, 'mtc_bus_ticketing_app/updatebus3.html', {'update':update})
 
 def updatebus3(request):
     return render(request, 'mtc_bus_ticketing_app/updatebus3.html')
@@ -103,3 +105,5 @@ def todaycollection(request):
 
 def overallcollection(request):
     return render(request, 'mtc_bus_ticketing_app/overallcollection.html')
+
+# Passenger Site
