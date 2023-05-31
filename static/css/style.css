@@ -516,10 +516,6 @@ body {
 
 /* routesearch.html */
 
-.routesearch form{
-    display: none;
-}
-
 .routesearch .form-container {
     display: none;
 }
