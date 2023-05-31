@@ -114,16 +114,7 @@ def routesearch(request):
     if request.method == 'POST':
         form1 = RouteSerchForm(request.POST)
         form2 = RouteNoSearchForm(request.POST)
-        if form1.is_valid() and form2.is_valid():
-            From = form1.cleaned_data['From']
-            To = form1.cleaned_data['To']
-            BusRoute = form2.cleaned_data['BusRoute']
-            busroutedetails = BusRouteDetails.objects.filter(From=From,To=To,BusRoute=BusRoute)
-            if busroutedetails.exists():
-                return render(request, 'mtc_bus_ticketing_app/busdetails.html', {'busroutedetails':busroutedetails})
-            else:
-                messages.error(request, 'No results found')
-        elif form1.is_valid():
+        if form1.is_valid():
             From = form1.cleaned_data['From']
             To = form1.cleaned_data['To']
             busroutedetails = BusRouteDetails.objects.filter(From=From,To=To)
