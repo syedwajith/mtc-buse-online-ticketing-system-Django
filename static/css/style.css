@@ -513,3 +513,13 @@ body {
     margin-left: 29%;
     margin-top: 3%;
 }
+
+/* routesearch.html */
+
+.routesearch form{
+    display: none;
+}
+
+.routesearch .form-container {
+    display: none;
+}

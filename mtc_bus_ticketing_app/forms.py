@@ -37,3 +37,13 @@ class BookedTicketDetailsForm(forms.ModelForm):
     class Meta:
         model = BookedTicketDetails
         fields = ['Route_No','From_location','To_location','Ticket_Amount','No_of_Tickets','Total_Amount']
+
+class RouteSerchForm(forms.ModelForm):
+    class Meta:
+        model = BusRouteDetails
+        fields = ['From','To']
+
+class RouteNoSearchForm(forms.ModelForm):
+    class Meta:
+        model = BusRouteDetails
+        fields = ['BusRoute']

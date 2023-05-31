@@ -1,0 +1,48 @@
+{% include 'mtc_bus_ticketing_app/base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock head %}
+
+{% block content %}
+    <div class="err-msg">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{message.tags}}" role="alert">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="checkbox-container">
+        <label>
+            <input type="checkbox" id="checkbox1" onchange="toggleform(1)">Show Form 1
+        </label>
+        <label>
+            <input type="checkbox" id="checkbox2" onchange="toggleform(2)">Show Form 2
+        </label>
+    </div>
+    <div class="routesearch">
+        <div class="form-container" id="form1">
+            <form method="post">
+                {% csrf_token %}
+                {{form1.as_p}}
+                <div class="route-search-btn">
+                    <input type="submit" value="search">
+                </div>
+            </form>
+        </div>
+        <div class="form-container" id="form2">
+            <form method="post">
+                {% csrf_token %}
+                {{form2.as_p}}
+                <div class="route-search-btn">
+                    <input type="submit" value="search">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+    

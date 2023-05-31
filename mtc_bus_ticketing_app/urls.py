@@ -32,4 +32,6 @@ urlpatterns = [
     path('todaycollection/', views.todaycollection),
     path('overallcollection/', views.overallcollection),
     path('viewbusroutes/', views.viewbusroutes),
+    path('routesearch/', views.routesearch),
+    path('busdetails/', views.busdetails),
 ]
