@@ -23,22 +23,22 @@
                     </tr>
                 </thead>
                     
-                {% for busroutedetail in busroutedetail %}
                 <tbody>
-                    <tr>
-                        <td>{{busroutedetail.BusRoute}}</td>
-                        <td>{{busroutedetail.From}}</td>
-                        <td>{{busroutedetail.To}}</td>
-                        <td>{{busroutedetail.TicketAmount}}</td>
-                        <td>
-                            <a href="/mtc_bus_ticketing_app/updatebus2_update/{{busroutedetail.id}}">
-                                <button>update</button>
-                            </a>
-                        </td>
-                    </tr>
+                    {% for busroutedetail in busroutedetail %}
+                        <tr>
+                            <td>{{busroutedetail.BusRoute}}</td>
+                            <td>{{busroutedetail.From}}</td>
+                            <td>{{busroutedetail.To}}</td>
+                            <td>{{busroutedetail.TicketAmount}}</td>
+                            <td>
+                                <a href="/mtc_bus_ticketing_app/updatebus2_update/{{busroutedetail.id}}">
+                                    <button>update</button>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
-                {% endfor %}
-                        
+                               
             </table>
         </div>
     </div>

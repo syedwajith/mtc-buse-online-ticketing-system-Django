@@ -1,4 +1,4 @@
-{% include 'mtc_bus_ticketing_app/base.html' %}
+{% extends 'mtc_bus_ticketing_app/base.html' %}
 {% load static %}
 
 {% block head %}
@@ -16,32 +16,37 @@
             {% endfor %}
         {% endif %}
     </div>
-    <div class="checkbox-container">
-        <label>
-            <input type="checkbox" id="checkbox1" onchange="toggleform(1)">Show Form 1
-        </label>
-        <label>
-            <input type="checkbox" id="checkbox2" onchange="toggleform(2)">Show Form 2
-        </label>
-    </div>
-    <div class="routesearch">
-        <div class="form-container" id="form1">
-            <form method="post">
-                {% csrf_token %}
-                {{form1.as_p}}
-                <div class="route-search-btn">
-                    <input type="submit" value="search">
-                </div>
-            </form>
+    <div class="routesearch-container">
+        <div class="form-heading">
+            choose form
         </div>
-        <div class="form-container" id="form2">
-            <form method="post">
-                {% csrf_token %}
-                {{form2.as_p}}
-                <div class="route-search-btn">
-                    <input type="submit" value="search">
-                </div>
-            </form>
+        <div class="checkbox-container">
+            <label>
+                <input type="checkbox" id="checkbox1" onchange="toggleform(1)">Show Form 1
+            </label>
+            <label>
+                <input type="checkbox" id="checkbox2" onchange="toggleform(2)">Show Form 2
+            </label>
+        </div>
+        <div class="routesearch">
+            <div class="form-container" id="form1">
+                <form method="post">
+                    {% csrf_token %}
+                    {{form1.as_p}}
+                    <div class="route-search-btn">
+                        <input type="submit" value="search">
+                    </div>
+                </form>
+            </div>
+            <div class="form-container" id="form2">
+                <form method="post">
+                    {% csrf_token %}
+                    {{form2.as_p}}
+                    <div class="route-search-btn">
+                        <input type="submit" value="search">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 {% endblock content %}

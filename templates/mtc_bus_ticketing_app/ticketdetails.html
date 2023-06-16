@@ -1,0 +1,56 @@
+{% extends 'mtc_bus_ticketing_app/base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock head %}
+
+{% block content %}
+    <div class="ticketdetail-container">
+        <div class="heading-container">
+            <label>mtc-bus ticket details</label>
+        </div>
+        <div class="tab5">
+            <table>
+                <tr>
+                    <td>route number</td>
+                    <td>{{latest_ticket.Route_No}}</td>
+                </tr>
+                <tr>
+                    <td>from location</td>
+                    <td>{{latest_ticket.From_location}}</td>
+                </tr>
+                <tr>
+                    <td>to location</td>
+                    <td>{{latest_ticket.To_location}}</td>
+                </tr>
+                <tr>
+                    <td>ticket amount</td>
+                    <td>{{latest_ticket.Ticket_Amount}}</td>
+                </tr>
+                <tr>
+                    <td>number of tickets</td>
+                    <td>{{latest_ticket.No_of_Tickets}}</td>
+                </tr>
+                <tr>
+                    <td>total amount</td>
+                    <td>{{latest_ticket.Total_Amount}}</td>
+                </tr>
+                <tr>
+                    <td>booked date & time</td>
+                    <td>{{latest_ticket.Booked_Date}}</td>
+                </tr>
+                <tr>
+                    <td>expired date & time</td>
+                    <td>{{latest_ticket.Expired_Date}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="download-btn">
+            <a href="#">
+                <button>download as pdf</button>
+            </a>
+        </div>
+    </div>
+{% endblock content %}
+    

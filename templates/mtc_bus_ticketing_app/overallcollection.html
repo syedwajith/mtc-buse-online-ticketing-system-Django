@@ -22,13 +22,16 @@
                     </tr>
                 </thead>
                 
-                {% for i in i %}
                 <tbody>
-                    <tr>
-                        <td></td>
-                    </tr>
+                    {% for overall_amount in overall_amount %}
+                        <tr>
+                            <td>{{overall_amount.Route_No}}</td>
+                            <td>{{overall_amount.Booked_Date__month}}</td>
+                            <td>{{overall_amount.Booked_Date__year}}</td>
+                            <td>{{overall_amount.totalamt}}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
-                {% endfor %}
                     
             </table>
         </div>

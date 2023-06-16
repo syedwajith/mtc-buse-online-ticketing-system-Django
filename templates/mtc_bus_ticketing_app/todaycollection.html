@@ -15,19 +15,22 @@
             <table class="content-table">
                 <thead>
                     <tr>
+                        <th>today date</th>
                         <th>busroute no</th>
                         <th>collection</th>
                     </tr>
                 </thead>
                 
-                {% for i in i %}
                 <tbody>
-                    <tr>
-                        <td></td>
-                    </tr>
+                    {% for total_amount in total_amount %}
+                        <tr>
+                            <td>{{today_date}}</td>
+                            <td>{{total_amount.Route_No}}</td>
+                            <td>{{total_amount.total}}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
-                {% endfor %}
-                    
+                              
             </table>
         </div>
     </div>

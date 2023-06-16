@@ -1,4 +1,4 @@
-{% include 'mtc_bus_ticketing_app/base.html' %}
+{% extends 'mtc_bus_ticketing_app/base.html' %}
 {% load static %}
 
 {% block head %}
@@ -6,6 +6,36 @@
 {% endblock head %}
 
 {% block content %}
-    <label>hello</label>
-{% endblock content %}
+    <div class="busdetails-container">
+        <div class="header-container">
+            <label>route details</label>
+        </div>
+        <div class="table-container">
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>busroute no</th>
+                        <th>source location</th>
+                        <th>destination location</th>
+                        <th>action</th>
+                    </tr>
+                </thead>
     
+                <tbody>
+                    {% for busroutedetails in busroutedetails %}
+                        <tr>
+                            <td>{{busroutedetails.BusRoute}}</td>
+                            <td>{{busroutedetails.From}}</td>
+                            <td>{{busroutedetails.To}}</td>
+                            <td>
+                                <a href="/mtc_bus_ticketing_app/busdetails_bookticket/{{busroutedetails.id}}">
+                                    <button>book ticket</button>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %} 
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}

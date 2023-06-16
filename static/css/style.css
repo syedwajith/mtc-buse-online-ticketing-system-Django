@@ -19,11 +19,13 @@
     --darkgreen : #006400;
     --lightgreen : #4caf50;
     --red : #ff0000;
+    --lightred : rgba(255, 0, 0, 0.904);
 }
 
 body {
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     font-family: 'poppins',sans-serif;
     background-color: var(--lightblue);
 }
@@ -117,11 +119,10 @@ body {
 .container {
     width: 500px;
     height: 300px;
-    background-color: var(--darkgray);
     flex-direction: column;
-    border: none;
+    border: 1px solid var(--black);
     border-radius: 5%;
-    box-shadow: 0 0 0 3px var(--white);
+    box-shadow: 0 0 0 3px var(--lightgray);
 }
 
 .heading {
@@ -140,7 +141,7 @@ body {
 .txtbox input {
     width: 150px;
     height: 30px;
-    border: none;
+    border: 1px solid var(--black);
     border-radius: 3px;
     font-size: 18px;
 }
@@ -414,10 +415,56 @@ body {
 
 /* updatebus2.html */
 
-.content-table tbody tr td a button {
-    width: 100%;
+.tab1 {
+    margin-left: 0.5vw;
+    margin-top: 3vh;
+}
+
+.tab1 .content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.432);
+    margin-left: 0vw;
+}
+
+.tab1 .content-table thead tr {
+    background-color: var(--orange);
+    color: var(--white);
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.tab1 .content-table th, .tab1 .content-table td {
+    padding: 2vh 2vw;
+    text-transform: capitalize;
+}
+
+.tab1 .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tab1 .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f302;
+}
+
+.tab1 .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--orange);
+}
+
+.tab1 .content-table tbody tr:hover {
+    font-weight: bold;
+    color: var(--orange);
+}
+
+.tab1 .content-table tbody tr td a button {
+    width: 5vw;
     padding: 4px;
-    font-size: 95%;
+    font-size: 0.9em;
     text-transform: capitalize;
     background-color: var(--darkblue);
     color: var(--white);
@@ -426,10 +473,46 @@ body {
     cursor: pointer;
 }
 
-/* deletebus.html */    /* updatebus1.html */
+/* updatebus3.html */
+
+.tab2 {
+    margin-left: 250px;
+    padding-top: 50px;
+}
+
+.tab2 table td {
+    padding: 12px 15px;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.tab2 .update-btn input[type="submit"] {
+    width: 10%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: var(--orange);
+    color: var(--black);
+    cursor: pointer;
+    user-select: none;
+    margin-left: 20%;
+}
+
+.tab2 .update-btn input[type="submit"]:hover {
+    background-color: var(--lightorange);
+    color: var(--white);
+}
+
+/* deletebus.html */
 
 .tab1 {
-    margin-left: 24%;
+    margin-left: 20%;
     margin-top: 3%;
 }
 
@@ -457,14 +540,14 @@ body {
     cursor: pointer;
 }
 
-/* viewbusroutes.html */    /* todaycollection.html */
+/* viewbusroutes.html */
 
-.tab, .tab3 {
-    margin-left: 30%;
-    margin-top: 3%;
+.tab {
+    margin-left: 20vw;
+    margin-top: 3vh;
 }
 
-.content-table {
+.tab .content-table {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
@@ -472,50 +555,419 @@ body {
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.432);
-    margin-left: 3%;
+    margin-left: 2vw;
 }
 
-.content-table thead tr {
+.tab .content-table thead tr {
     background-color: var(--orange);
     color: var(--white);
     text-align: left;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 1.2em;
 }
 
-.content-table th, .content-table td {
-    padding: 12px 15px;
+.tab .content-table th, .tab .content-table td {
+    padding: 2vh 3vw;
     text-transform: capitalize;
 }
 
-.content-table tbody tr {
+.tab .content-table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
-.content-table tbody tr:nth-of-type(even) {
+.tab .content-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f302;
 }
 
-.content-table tbody tr:last-of-type {
+.tab .content-table tbody tr:last-of-type {
     border-bottom: 2px solid var(--orange);
 }
 
-.content-table tbody tr:hover {
+.tab .content-table tbody tr:hover {
     font-weight: bold;
     color: var(--orange);
 }
 
 /* todaycollection.html */
 
+.tab3 {
+    margin-left: 20vw;
+    margin-top: 3vh;
+}
+
+.tab3 .content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.432);
+    margin-left: 2vw;
+}
+
+.tab3 .content-table thead tr {
+    background-color: var(--orange);
+    color: var(--white);
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.tab3 .content-table th, .tab3 .content-table td {
+    padding: 2vh 3vw;
+    text-transform: capitalize;
+}
+
+.tab3 .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tab3 .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f302;
+}
+
+.tab3 .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--orange);
+}
+
+.tab3 .content-table tbody tr:hover {
+    font-weight: bold;
+    color: var(--orange);
+}
+
 /* overallcollection.html */
 
 .tab4 {
-    margin-left: 29%;
-    margin-top: 3%;
+    margin-left: 17.5vw;
+    margin-top: 3vh;
+}
+
+.tab4 .content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.432);
+    margin-left: 2vw;
+}
+
+.tab4 .content-table thead tr {
+    background-color: var(--orange);
+    color: var(--white);
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.tab4 .content-table th, .tab4 .content-table td {
+    padding: 2vh 3vw;
+    text-transform: capitalize;
+}
+
+.tab4 .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tab4 .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f302;
+}
+
+.tab4 .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--orange);
+}
+
+.tab4 .content-table tbody tr:hover {
+    font-weight: bold;
+    color: var(--orange);
 }
 
 /* routesearch.html */
 
-.routesearch .form-container {
+.routesearch-container {
+    width: 30vw;
+    height: 55vh;
+    border: 1px solid var(--black);
+    box-shadow: 10px 10px 5px 0px var(--darkgray);
+    border-radius: 5px;
+    margin-left: 33%;
+}
+
+.routesearch-container .form-heading {
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 3%;
+    padding: 5px;
+}
+
+.routesearch-container .checkbox-container {
+    margin: 3% 0% 3% 0%;
+}
+
+.routesearch-container .checkbox-container label {
+    padding: 0px 40px 0px 40px;
+    text-transform: capitalize;
+    font-size: 16px;
+}
+
+.routesearch-container .routesearch .form-container form{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    font-size: 18px;
+}
+
+.routesearch-container .routesearch .form-container {
     display: none;
+}
+
+.form-container .route-search-btn input[type="submit"] {
+    width: 8vw;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: var(--darkgray);
+    color: var(--black);
+    cursor: pointer;
+    user-select: none;
+}
+
+.form-container .route-search-btn input[type="submit"]:hover {
+    background-color: var(--lightgray);
+    color: var(--black);
+}
+
+.form-container form input[type="text"] {
+    width: 18vw;
+    height: 3vh;
+    padding: 10px;
+    display: flex;
+    border: 0.9px solid var(--black);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.err-msg {
+    padding-top: 8vh;
+}
+
+.err-msg .alert {
+    margin-left: 43vw;
+}
+
+/* busdetails.html */
+
+.busdetails-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.busdetails-container .header-container {
+    width: 100vw;
+    height: 10vh;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 520;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.busdetails-container .table-container .content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.432);
+    margin-left: 15vw;
+}
+
+.busdetails-container .table-container .content-table thead tr {
+    background-color: var(--orange);
+    color: var(--white);
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.busdetails-container .table-container .content-table th, .busdetails-container .table-container .content-table td {
+    padding: 2vh 4vw;
+    text-transform: capitalize;
+}
+
+.busdetails-container .table-container .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.busdetails-container .table-container .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f302;
+}
+
+.busdetails-container .table-container .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--orange);
+}
+
+.busdetails-container .table-container .content-table tbody tr:hover {
+    font-weight: bold;
+    color: var(--orange);
+}
+
+.busdetails-container .table-container .content-table tbody tr td a button {
+    width: 7vw;
+    padding: 4px;
+    font-size: 1em;
+    text-transform: capitalize;
+    background-color: var(--darkblue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ticketbookingform.html */
+
+.ticket-booking-container {
+    width: 50vw;
+    height: 95vh;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px 0px var(--darkgray);
+    overflow: hidden;
+    margin-left: 25vw;
+    margin-top: 2.5vh;
+}
+
+.ticket-booking-container .form-header {
+    width: 50vw;
+    height: 10vh;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 520;
+    padding-top: 2vh;
+    padding-bottom: 8vh;
+}
+
+.ticket-booking-container .ticket-booking-form form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 8vw;
+    font-size: 1.1em;
+}
+
+.ticket-booking-container .ticket-booking-form label {
+    margin-left: 3vw;
+    text-transform: capitalize;
+}
+
+.ticket-booking-container .ticket-booking-form input[type="text"], .ticket-booking-container .ticket-booking-form input[type="number"] {
+    width: 25vw;
+    height: 4vh;
+    display: flex;
+    padding: 10px;
+    border: 0.9px solid var(--black);
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-bottom: 2.5vh;
+    margin-left: 3vw;
+}
+
+.ticket-booking-container .ticket-booking-form .payment-method-container {
+    width: 50vw;
+    height: 10vh;
+    margin-bottom: 3vh;
+}
+
+.ticket-booking-container .ticket-booking-form .payment-method-container label {
+    padding-right: 2vw;
+}
+
+.ticket-booking-container .ticket-booking-form .ticket-booking-btn input[type="submit"] {
+    width: 15vw;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: var(--darkgreen);
+    color: var(--white);
+    cursor: pointer;
+    user-select: none;
+    margin-left: 8vw;
+}
+
+.ticket-booking-container .ticket-booking-form .ticket-booking-btn input[type="submit"]:hover {
+    background-color: var(--darkgreen);
+    color: var(--black);
+}
+
+/* ticketdetails.html */
+
+.ticketdetail-container {
+    width: 40vw;
+    height: 90vh;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px 0px var(--darkgray);
+    overflow: hidden;
+    margin-left: 30vw;
+    margin-top: 3vh;
+}
+
+.ticketdetail-container .heading-container {
+    width: 40vw;
+    height: 10vh;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 520;
+    padding-top: 2vh;
+    padding-bottom: 8vh;
+}
+
+.ticketdetail-container .tab5 {
+    margin-left: 3.2vw;
+    margin-top: 2vh;
+}
+
+.ticketdetail-container .tab5 table td {
+    padding: 1.7vh 1.5vw;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.ticketdetail-container .download-btn a button {
+    width: 10vw;
+    height: 5vh;
+    text-transform: capitalize;
+    font-size: 0.9em;
+    text-decoration: none;
+    background-color: var(--red);
+    cursor: pointer;
+    color: var(--lightblue);
+    font-weight: 550;
+    border: none;
+    border-radius: 3px;
+    margin-top: 7vh;
+    margin-left: 15vw;
+}
+
+.ticketdetail-container .download-btn a button:hover {
+    background-color: var(--lightred);
 }

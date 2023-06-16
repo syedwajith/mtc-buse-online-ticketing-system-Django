@@ -22,16 +22,16 @@
                     </tr>
                 </thead>
                 
-                {% for busdetails in busdetails %}
                 <tbody>
-                    <tr>
-                        <td>{{busdetails.BusRoute_No}}</td>
-                        <td>{{busdetails.Source_location}}</td>
-                        <td>{{busdetails.Destination_location}}</td>
-                    </tr>
+                    {% for busdetails in busdetails %}
+                        <tr>
+                            <td>{{busdetails.BusRoute_No}}</td>
+                            <td>{{busdetails.Source_location}}</td>
+                            <td>{{busdetails.Destination_location}}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
-                {% endfor %}
-                    
+                   
             </table>
         </div>
     </div>

@@ -17,15 +17,21 @@
             <table>
                 <tr>
                     <td>BusRoute No</td>
-                    <td>{{update.BusRoute}}</td>
+                    <td>
+                        <input type="text" name="BusRoute" value="{{update.BusRoute}}" readonly>
+                    </td>
                 </tr>
                 <tr>
                     <td>From</td>
-                    <td>{{update.From}}</td>
+                    <td>
+                        <input type="text" name="From" value="{{update.From}}" readonly>
+                    </td>
                 </tr>
                 <tr>
                     <td>To</td>
-                    <td>{{update.To}}</td>
+                    <td>
+                        <input type="text" name="To" value="{{update.To}}" readonly>
+                    </td>
                 </tr>
                 <tr>
                     <td>TicketAmount</td>
@@ -33,8 +39,16 @@
                         <input type="number" name="TicketAmount" value="{{update.TicketAmount}}">
                     </td>
                 </tr>
+                <tr>
+                    <td>Duration in Minutes</td>
+                    <td>
+                        <input type="number" name="Duration_in_Minutes" value="{{update.Duration_in_Minutes}}">
+                    </td>
+                </tr>
             </table>
-            <input type="submit" value="update">
+            <div class="update-btn">
+                <input type="submit" value="update">
+            </div>
         </form>
     </div>
 </div>
