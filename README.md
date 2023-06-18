@@ -2,8 +2,7 @@
 
 # Screen Shot
 
-![Screenshot (142)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/759bcd07-2bae-413b-baa2-f59418c2cf7a)
-![Screenshot (143)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/bb85a0e5-6cdb-45fe-b87c-680b6a0670a3)
+
 ![Screenshot (131)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/5883641b-7487-4789-9259-f03bb076ced9)
 ![Screenshot (132)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/5e5f0b17-948a-4f0a-9c52-c1d81b764ff9)
 ![Screenshot (133)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/6205e9c5-e017-4ca1-b482-9bd5ef40f137)
@@ -14,7 +13,9 @@
 ![Screenshot (138)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/fbcf0f95-c3d4-4998-8300-0b9547482b42)
 ![Screenshot (139)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/55695a34-8d0a-4245-8656-6246b20be6bf)
 ![Screenshot (140)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/51e711eb-26f5-4961-9aca-d394ad1191d4)
-![Screenshot (141)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/d7db382e-8dfd-4e19-92ca-9a21de5e23cb)
+![Screenshot (141)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/d7db382e-8dfd-4e19-92ca-9a21de5e23cb)![Screenshot (143)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/48a73211-da99-482c-82e5-652b0db4f61a)
+![Screenshot (142)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/2538a3d1-9630-496b-bc2f-e6d82a6aab72)
+
 ![Screenshot (153)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/50fcfeff-73d6-435c-8f6a-ec334338a50a)
 ![Screenshot (144)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/c992b9ae-e6b3-4c00-b832-876d86c38b9d)
 ![Screenshot (145)](https://github.com/syedwajith/mtc-buse-online-ticketing-system-Django/assets/84230157/4c3d76b7-9b27-494f-8f70-a7fbfb0bda44)
