@@ -1,6 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 from django.db.models import Sum
+from django.template.loader import get_template
+from io import BytesIO
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+from django.utils.html import strip_tags
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.lib.styles import getSampleStyleSheet
+from html.parser import HTMLParser
+import re
 from mtc_bus_ticketing_app.forms import BusRouteDetailsForm, BusRoutesForm, DeleteRouteForm, UpdateRouteForm, RouteSerchForm, RouteNoSearchForm, BookedTicketDetailsForm
 from mtc_bus_ticketing_app.models import BusRouteDetails, BusRoutes, BookedTicketDetails
 from datetime import datetime, timedelta, date
@@ -181,4 +190,57 @@ def ticketdetails(request):
     return render(request, 'mtc_bus_ticketing_app/ticketdetails.html', {'latest_ticket':latest_ticket})
 
 def ticketdetails_download_as_pdf(request):
-    pass
+    template = get_template('mtc_bus_ticketing_app/ticketdetails.html')
+    latest_ticket_id = request.session.get('latest_ticket_id')
+    latest_ticket = None
+    if latest_ticket_id:
+        try:
+            latest_ticket = BookedTicketDetails.objects.get(id=latest_ticket_id)
+        except BookedTicketDetails.DoesNotExist:
+            pass
+    context = {'latest_ticket':latest_ticket}
+    rendered_template = template.render(context)
+
+    cleaned_template = re.sub(r'<button>.*?</button>|<title>.*?</title>', '', rendered_template, flags=re.DOTALL)
+    cleaned_template = re.sub(r'<div class="heading-container">(.*?)</div>', lambda match: match.group(0).upper(), cleaned_template, flags=re.DOTALL)
+    cleaned_content = strip_tags(cleaned_template)
+    lines = cleaned_content.splitlines()
+
+    buffer = BytesIO()
+    
+    # Using canvas to convert template to pdf 
+
+    doc = canvas.Canvas(buffer, pagesize=letter)
+    doc.setFont("Helvetica", 12)
+    width, height = letter
+    text_object = doc.beginText(100, height-50)
+    text_object.setFont("Helvetica", 12)
+    text_object.textLines(cleaned_content)
+    doc.drawText(text_object)
+    doc.save()
+    
+    '''
+    # Using SimpleDocTemplate to convert template to pdf
+
+    doc = SimpleDocTemplate(buffer, pagesize=letter)
+
+    styles = getSampleStyleSheet()
+    centered_style = styles["Normal"]
+    centered_style.alignment = 0
+
+    flowables = []
+
+    for line in lines:
+        paragraph = Paragraph(line, centered_style)
+        flowables.append(paragraph)
+        flowables.append(Spacer(1, 5))
+
+    doc.build(flowables)
+    '''
+    buffer.seek(0)
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="MTC-Bus_ticket.pdf"'
+    response.write(buffer.getvalue())
+    buffer.close()
+    return response

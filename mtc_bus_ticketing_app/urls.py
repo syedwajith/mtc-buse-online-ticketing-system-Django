@@ -36,4 +36,5 @@ urlpatterns = [
     path('busdetails/', views.busdetails),
     path('busdetails_bookticket/<int:id>/', views.busdetails_bookticket),
     path('ticketdetails/', views.ticketdetails),
+    path('ticketdetails_download_as_pdf/', views.ticketdetails_download_as_pdf),
 ]
